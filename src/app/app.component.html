@@ -1,0 +1,58 @@
+<div class="container">
+  <div class="row">
+    <div class=" col-md-12 col-lg-12 ">
+      <span><i id="todoIcon" class="fa fa-list-ol" aria-hidden="true"></i>
+
+        <th id="todoLogo">TODO...</th>
+      </span>
+    </div>
+  </div>
+  <div class="row">
+    <div class="  col-sm-4 col-sm-offset-4">
+      <span><i class="fa fa-list-alt" aria-hidden="true"></i>
+        <input id="txtTodo" placeholder="Enter todo here..." type="text" class="form-control btn-sm"
+          [(ngModel)]="todoTitle" (keyup.enter)="[AddTodo()]" />
+      </span>
+      <br />
+      <br />
+    </div>
+  </div>
+  <div class="col-sm-4 col-sm-offset-4">
+    <button [ngClass]="{ active: filter === 'all' }" (click)="filter = 'all'" class="btn btn-primary">
+      All
+    </button>
+    <button [ngClass]="{ active: filter === 'active' }" (click)="filter = 'active'" class="btn btn-warning">
+      Active
+    </button>
+    <button [ngClass]="{ active: filter === 'Done' }" (click)="filter = 'Done'" class="btn btn-danger">
+      Done
+    </button>
+  </div>
+  <div class="todoCount">{{ Remaining() }} Items Left</div>
+
+  <hr id="line" />
+  <div class="col-sm-offset-9">
+    <button class="clearButton" (click)="ClearComplete()">
+      ClearCompleted
+    </button>
+  </div>
+
+  <div>
+    <div class="col-sm-4 col-sm-offset-4">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Status</th>
+            <th scope="col">ToDo</th>
+            <th scope="col">Remove</th>
+          </tr>
+        </thead>
+        <tr *ngFor="let todo of todosFilter()">
+          <td><input type="checkbox" [(ngModel)]="todo.completed" /></td>
+          <td [ngClass]="{ completed: todo.completed }">{{ todo.title }}</td>
+          <td><a href="#" (click)="RemoveTodo(todo.id)">&#10060;</a></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>

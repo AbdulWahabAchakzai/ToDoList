@@ -1,0 +1,54 @@
+#todoLogo {
+  font-size: 3em;
+  font-family: sans-serif;
+  color: green;
+}
+#background {
+  color: gray;
+}
+
+#todoIcon {
+  color: green;
+  size: 5em;
+}
+
+#txtTodo {
+  border-radius: 20px;
+  border-color: indigo;
+  font-size: 20px;
+  height: 40px;
+}
+
+::placeholder {
+  color: darkgreen;
+  font-family: initial;
+}
+
+p {
+  color: green;
+  font-size: 15px;
+}
+
+.completed {
+  text-decoration: line-through;
+  color: green;
+}
+
+.todoCount {
+  color: green;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.clearButton {
+  color: indigo;
+  border-radius: 20px;
+}
+
+#line {
+  border: 0.5px solid darkgreen;
+}
+
+#todoIcon {
+  font-size: 40px;
+  margin: 20px;
+}
